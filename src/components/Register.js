@@ -7,7 +7,7 @@ const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [userType, setUserType] = useState('client'); // Default to client
+    const [userType, setUserType] = useState('Client'); // Default to Client
     const [errors, setErrors] = useState([]);
     const navigate = useNavigate();
 
@@ -95,8 +95,8 @@ const Register = () => {
             <div>
                 <label>User Type</label>
                 <select value={userType} onChange={(e) => setUserType(e.target.value)} required>
-                    <option value="client">Client</option>
-                    <option value="employee">Employee</option>
+                    <option value="Client">Client</option>
+                    <option value="Employee">Employee</option>
                 </select>
             </div>
             <button type="submit">Register</button>

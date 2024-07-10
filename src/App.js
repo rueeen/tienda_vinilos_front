@@ -10,7 +10,7 @@ import { UserProvider, UserContext } from './contexts/UserContext';
 
 function Home() {
     const { user } = useContext(UserContext);
-
+    
     return (
         <h2>Bienvenido {user ? user.username : 'Invitado'}</h2>
     );
@@ -33,7 +33,10 @@ function Navigation() {
                 <li>
                     <Link to="/">Home</Link>
                 </li>
-                {user && user.userprofile && user.userprofile.user_type === 'employee' && (
+                <li>
+                    <Link to="/vinilos">Vinilos</Link>
+                </li>
+                {user && user.userprofile && user.userprofile.user_type === 2 && (
                     <>
                         <li>
                             <Link to="/crear-vinilo">Crear Vinilo</Link>
@@ -42,11 +45,6 @@ function Navigation() {
                             <Link to="/editar-vinilo">Editar Vinilo</Link>
                         </li>
                     </>
-                )}
-                {user && (
-                    <li>
-                        <Link to="/vinilos">Vinilos</Link>
-                    </li>
                 )}
                 {!user ? (
                     <>

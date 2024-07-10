@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:8000/api', // Ajusta la URL base según sea necesario
+    baseURL: 'http://localhost:8000/api', // Asegúrate de ajustar la URL base según sea necesario
 });
 
 // Intercepta cada solicitud para añadir el token JWT
