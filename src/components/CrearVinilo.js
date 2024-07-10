@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react'; // Importamos hooks para tra
 import api from '../services/api'; // Importamos la instancia de axios
 
 function CrearVinilo() { // Creamos la función que se encargará de crear un nuevo álbum
-    const [titulo, setTitulo] = useState('');
-    const [precio, setPrecio] = useState('');
-    const [stock, setStock] = useState('');
-    const [publicacion, setPublicacion] = useState('');
-    const [genero, setGenero] = useState([]);
-    const [artista, setArtista] = useState('');
-    const [portada, setPortada] = useState(null);
-    const [artistas, setArtistas] = useState([]);
-    const [generos, setGeneros] = useState([]);
+    const [titulo, setTitulo] = useState(''); // Definimos el estado para almacenar los valores de los campos del formulario
+    const [precio, setPrecio] = useState(''); // Definimos el estado para almacenar los valores de los campos del formulario
+    const [stock, setStock] = useState(''); // Definimos el estado para almacenar los valores de los campos del formulario
+    const [publicacion, setPublicacion] = useState(''); // Definimos el estado para almacenar los valores de los campos del formulario
+    const [genero, setGenero] = useState([]); // Definimos el estado para almacenar los valores de los campos del formulario
+    const [artista, setArtista] = useState(''); // Definimos el estado para almacenar los valores de los campos del formulario
+    const [portada, setPortada] = useState(null); // Definimos el estado para almacenar los valores de los campos del formulario
+    const [artistas, setArtistas] = useState([]); // Definimos el estado para almacenar los artistas
+    const [generos, setGeneros] = useState([]); // Definimos el estado para almacenar los géneros
 
     useEffect(() => { // Utilizamos el hook useEffect para cargar los artistas y géneros al cargar el componente
         api.get('/artistas/') // Realizamos una petición GET a la API para obtener los artistas
@@ -33,7 +33,7 @@ function CrearVinilo() { // Creamos la función que se encargará de crear un nu
     const handleSubmit = (event) => { // Función que se ejecuta al enviar el formulario
         event.preventDefault(); // Prevenimos el comportamiento por defecto del formulario
         const formData = new FormData(); // Creamos un objeto FormData para enviar los datos del formulario
-        formData.append('titulo', titulo);
+        formData.append('titulo', titulo); 
         formData.append('precio', precio);
         formData.append('stock', stock);
         formData.append('publicacion', publicacion);

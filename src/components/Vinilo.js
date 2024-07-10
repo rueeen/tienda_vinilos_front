@@ -59,7 +59,7 @@ const Vinilo = () => { // Creamos la función que se encargará de listar los á
                                     <img src={vinilo.portada} alt={vinilo.titulo} width="100" />
                                 )}
                             </td>
-                            <td>{new Date(vinilo.publicacion).toLocaleDateString()}</td>
+                            <td>{new Date(vinilo.publicacion).toLocaleDateString()}</td> 
                             <td>
                                 {vinilo.genero && vinilo.genero.map((g) => g.nombre).join(', ')}
                             </td>

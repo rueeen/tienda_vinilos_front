@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
-
 import Vinilo from './components/Vinilo';
 import CrearVinilo from './components/CrearVinilo';
 import EditarVinilo from './components/EditarVinilo';
@@ -36,13 +35,10 @@ function Navigation() {
                 <li>
                     <Link to="/vinilos">Vinilos</Link>
                 </li>
-                {user && user.userprofile && user.userprofile.user_type === 2 && (
+                {user && user.userprofile && user.userprofile.user_type === 2 && ( // Verificar si el usuario es un administrador
                     <>
                         <li>
                             <Link to="/crear-vinilo">Crear Vinilo</Link>
-                        </li>
-                        <li>
-                            <Link to="/editar-vinilo">Editar Vinilo</Link>
                         </li>
                     </>
                 )}
